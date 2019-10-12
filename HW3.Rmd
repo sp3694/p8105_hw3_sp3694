@@ -5,19 +5,32 @@ date: "10/12/2019"
 output: github_document
 ---
 
-```{r loading_packages}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-library(p8105.datasets)
 ```
 
 
+
+```{r data}
+library(p8105.datasets)
+data("instacart")
+data("brfss_smart2010")
+```
 
 ## Problem 1
 
+###*cleaning instacart dataset*
 
-```{r }
-
+```{r echo=FALSE}
+instacart %>% 
+  janitor::clean_names() %>% 
+  head() %>% 
+  knitr::kable()
 ```
+
+The `instacart` dataset contains `r nrow(instacart)` observations and `r ncol(instacart)` variables. The variables in the dataset includes the following: `r colnames(instacart)`
+
 
 ## Problem 2
 
