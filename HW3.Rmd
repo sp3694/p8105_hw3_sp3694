@@ -12,7 +12,7 @@ library(tidyverse)
 
 
 
-```{r data}
+```{r data, include=FALSE}
 library(p8105.datasets)
 data("instacart")
 data("brfss_smart2010")

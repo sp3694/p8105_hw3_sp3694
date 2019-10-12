@@ -3,12 +3,6 @@ HW3
 Stephen Powers
 10/12/2019
 
-``` r
-library(p8105.datasets)
-data("instacart")
-data("brfss_smart2010")
-```
-
 ## Problem 1
 
 \#\#\#*cleaning instacart
