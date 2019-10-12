@@ -20,7 +20,7 @@ data("brfss_smart2010")
 
 ## Problem 1
 
-###*cleaning instacart dataset*
+###*Cleaning Instacart Dataset*
 
 ```{r echo=FALSE}
 instacart %>% 
@@ -31,6 +31,18 @@ instacart %>%
 
 The `instacart` dataset contains `r nrow(instacart)` observations and `r ncol(instacart)` variables. The variables in the dataset includes the following: `r colnames(instacart)`
 
+* There are `r length(unique(pull(instacart, aisle)))` total aisles in the dataset. 
+
+```{r echo=FALSE}
+instacart %>% 
+  select(product_id, product_name, aisle) %>% 
+  count(product_id, product_name, aisle) %>% 
+  arrange(desc(n)) %>% 
+  head(15) %>% 
+  knitr::kable()
+```
+
+* From the table created above, we see that the most ordered items are from the "fresh fruits" and "packaged vegetables fruits" aisles. 
 
 ## Problem 2
 
