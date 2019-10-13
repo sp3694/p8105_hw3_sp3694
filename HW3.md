@@ -119,4 +119,34 @@ ordered
 **Table 6**: States that were observed at 7 or more locations (year =
 2010)
 
+#### *Creating Spaghetti Plot*
+
+![](HW3_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+#### *Creating two-panel plot*
+
+``` r
+brfss_new %>% 
+    mutate(descending_location = str_to_title(descending_location)) %>% 
+    filter(
+        year %in% c(2006, 2010),
+        state == "NY") %>% 
+        group_by(year, descending_location) %>%
+    ggplot(aes(x = response, y = data_value, fill = descending_location)) + 
+    geom_col(position = "dodge") + 
+    facet_grid(. ~ year) +
+    viridis::scale_fill_viridis(
+        option = "magma",
+        name = "County",
+        discrete = TRUE) +
+    labs(
+        title = "Distribution of Response Values by Year and NY County",
+        x = "Response",
+        y = "Mean Response Value") +
+    theme_classic() +
+    theme(axis.text.x = element_text(angle=45, hjust=1))
+```
+
+![](HW3_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
 ## Problem 3
