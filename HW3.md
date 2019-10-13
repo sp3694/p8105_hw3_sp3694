@@ -78,31 +78,36 @@ Table 4
 
 #### *Renaming and cleaning data `brfss_smart2010`*
 
-``` r
-brfss =
-  brfss_smart2010 %>% 
-    janitor::clean_names() %>% 
-    rename(
-      state = locationabbr,
-      descending_location = locationdesc,
-    )
-```
-
 #### *Formatting a new dataset to focus on the “Overall Health” topic*
 
-``` r
-brfss_new = 
-  brfss %>% 
-    filter(
-      topic == "Overall Health",
-      response %in% c("Excellent", "Very good", "Good", "Fair", "Poor")) %>%
-    mutate(response = ordered(as.factor(response),
-                              levels = c(
-                                "Poor", 
-                                "Fair", 
-                                "Good", 
-                                "Very good", 
-                                "Excellent")))
-```
+| state | number\_locations |
+| :---- | ----------------: |
+| CT    |                 7 |
+| FL    |                 7 |
+| MA    |                 8 |
+| NC    |                 7 |
+| NJ    |                 8 |
+| PA    |                10 |
+
+In 2002, states that were observed at 7 or more locations.
+
+| state | number\_locations |
+| :---- | ----------------: |
+| CA    |                12 |
+| CO    |                 7 |
+| FL    |                41 |
+| MA    |                 9 |
+| MD    |                12 |
+| NC    |                12 |
+| NE    |                10 |
+| NJ    |                19 |
+| NY    |                 9 |
+| OH    |                 8 |
+| PA    |                 7 |
+| SC    |                 7 |
+| TX    |                16 |
+| WA    |                10 |
+
+In 2010, states that were observed at 7 or more locations.
 
 ## Problem 3

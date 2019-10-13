@@ -109,8 +109,7 @@ instacart %>%
     values_from = "mean_hour",
     ) %>% 
   knitr::kable(
-    caption = "Table 4"
-  )
+    caption = "Table 4")
 ```
 
 
@@ -145,6 +144,34 @@ brfss_new =
                                 "Excellent")))
 ```
 
+
+```{r echo=FALSE}
+brfss_new %>% 
+  select(state, descending_location, year) %>% 
+  filter(year == 2002) %>% 
+  unique() %>%
+  group_by(state) %>%
+  summarize(
+    number_locations = n()) %>% 
+    filter(number_locations >= 7) %>% 
+  knitr::kable(
+  caption = "In 2002, states that were observed at 7 or more locations."
+  )
+```
+
+```{r echo=FALSE}
+brfss_new %>% 
+  select(state, descending_location, year) %>% 
+  filter(year == 2010) %>% 
+  unique() %>%
+  group_by(state) %>%
+  summarize(
+    number_locations = n()) %>% 
+    filter(number_locations >= 7) %>% 
+  knitr::kable(
+  caption = "In 2010, states that were observed at 7 or more locations."
+  )
+```
 
 ## Problem 3
 
