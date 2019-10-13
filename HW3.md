@@ -16,7 +16,7 @@ Stephen Powers
 |         1 |       43633 |                    5 |         1 |   112108 | train     |             4 |          4 |                   10 |                         9 | Lightly Smoked Sardines in Olive Oil          |        95 |             15 | canned meat seafood  | canned goods |
 |         1 |       13176 |                    6 |         0 |   112108 | train     |             4 |          4 |                   10 |                         9 | Bag of Organic Bananas                        |        24 |              4 | fresh fruits         | produce      |
 
-Table 1
+**Table 1**: Instacart Dataset
 
 The `instacart` dataset contains 1384617 observations and 15 variables.
 The variables in the dataset includes the following: order\_id,
@@ -46,7 +46,7 @@ dataset.
 |       45007 | Organic Zucchini       | fresh vegetables           |  4589 |
 |       22935 | Organic Yellow Onion   | fresh vegetables           |  4290 |
 
-Table 2
+**Table 2**: Most ordered items
 
   - From the table created above, we see that the most ordered items are
     from the “fresh fruits” and “packaged vegetables fruits”
@@ -62,8 +62,9 @@ aisles.
 |    2 | Pure Baking Soda                  | Organix Chicken & Brown Rice Recipe             | Organic Raspberries                       |                                140 |                            13 |                                       1920 |
 |    3 | Organic Vanilla Extract           | Original Dry Dog                                | Organic Blueberries                       |                                122 |                             9 |                                       1692 |
 
-Table
-3
+**Table 3**: Three most popular items in each of the aisles baking
+ingredients, dog food care, and packaged vegetables
+fruits
 
 #### *Creating a table showing the mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered on each day of the week*
 
@@ -72,13 +73,17 @@ Table
 | Coffee Ice Cream | 13.77419 | 14.31579 | 15.38095 |  15.31818 | 15.21739 | 12.26316 | 13.83333 |
 | Pink Lady Apples | 13.44118 | 11.36000 | 11.70213 |  14.25000 | 11.55172 | 12.78431 | 11.93750 |
 
-Table 4
+**Table 4**: Mean hour of the day at which Pink Lady Apples and Coffee
+Ice Cream are
+ordered
 
 ## Problem 2
 
 #### *Renaming and cleaning data `brfss_smart2010`*
 
 #### *Formatting a new dataset to focus on the “Overall Health” topic*
+
+#### *Creating a table for states that were observed at 7 or more location in 2002*
 
 | state | number\_locations |
 | :---- | ----------------: |
@@ -89,7 +94,10 @@ Table 4
 | NJ    |                 8 |
 | PA    |                10 |
 
-In 2002, states that were observed at 7 or more locations.
+**Table 5**: States that were observed at 7 or more locations (year
+=2002)
+
+#### *Creating a table for states that were observed at 7 or more location in 2010*
 
 | state | number\_locations |
 | :---- | ----------------: |
@@ -108,6 +116,7 @@ In 2002, states that were observed at 7 or more locations.
 | TX    |                16 |
 | WA    |                10 |
 
-In 2010, states that were observed at 7 or more locations.
+**Table 6**: States that were observed at 7 or more locations (year =
+2010)
 
 ## Problem 3

@@ -26,7 +26,7 @@ instacart %>%
   janitor::clean_names() %>% 
   head() %>% 
   knitr::kable(
-    caption = "Table 1"
+    caption = "**Table 1**: Instacart Dataset"
   )
 ```
 
@@ -41,7 +41,7 @@ instacart %>%
   arrange(desc(n)) %>% 
   head(15) %>% 
   knitr::kable(
-    caption = "Table 2"
+    caption = "**Table 2**: Most ordered items"
   )
 ```
 
@@ -78,7 +78,7 @@ instacart %>%
     names_from = aisle,
     values_from = c(product_name, number_orders)) %>% 
   knitr::kable(
-    caption = "Table 3"
+    caption = "**Table 3**: Three most popular items in each of the aisles baking ingredients, dog food care, and packaged vegetables fruits"
   )
 ```
 
@@ -109,7 +109,7 @@ instacart %>%
     values_from = "mean_hour",
     ) %>% 
   knitr::kable(
-    caption = "Table 4")
+    caption = "**Table 4**: Mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered")
 ```
 
 
@@ -145,6 +145,8 @@ brfss_new =
 ```
 
 
+#### *Creating a table for states that were observed at 7 or more location in 2002*
+
 ```{r echo=FALSE}
 brfss_new %>% 
   select(state, descending_location, year) %>% 
@@ -155,9 +157,11 @@ brfss_new %>%
     number_locations = n()) %>% 
     filter(number_locations >= 7) %>% 
   knitr::kable(
-  caption = "In 2002, states that were observed at 7 or more locations."
+  caption = "**Table 5**: States that were observed at 7 or more locations (year =2002)"
   )
 ```
+
+#### *Creating a table for states that were observed at 7 or more location in 2010*
 
 ```{r echo=FALSE}
 brfss_new %>% 
@@ -169,7 +173,7 @@ brfss_new %>%
     number_locations = n()) %>% 
     filter(number_locations >= 7) %>% 
   knitr::kable(
-  caption = "In 2010, states that were observed at 7 or more locations."
+  caption = "**Table 6**: States that were observed at 7 or more locations (year = 2010)"
   )
 ```
 
