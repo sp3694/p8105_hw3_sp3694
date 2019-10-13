@@ -11,7 +11,6 @@ library(tidyverse)
 ```
 
 
-
 ```{r data, include=FALSE}
 library(p8105.datasets)
 data("instacart")
@@ -20,7 +19,7 @@ data("brfss_smart2010")
 
 ## Problem 1
 
-###*Cleaning Instacart Dataset*
+#### *Cleaning Instacart Dataset*
 
 ```{r echo=FALSE}
 instacart %>% 
@@ -63,6 +62,7 @@ instacart %>%
   theme(axis.text.x = element_text(angle=45, hjust=1))
 ```
 
+#### *Creating a table showing the three most popular items in each of the aisles “baking ingredients”, “dog food care”, and “packaged vegetables fruits”.*
 
 ```{r echo=FALSE}
 instacart %>% 
@@ -82,6 +82,7 @@ instacart %>%
   )
 ```
 
+#### *Creating a table showing the mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered on each day of the week*
 
 ```{r echo=FALSE}
 instacart %>% 
@@ -107,18 +108,41 @@ instacart %>%
     names_from = "day",
     values_from = "mean_hour",
     ) %>% 
-    knitr::kable(
-      caption = "Table 4"
+  knitr::kable(
+    caption = "Table 4"
   )
-
 ```
 
 
 ## Problem 2
 
+#### *Renaming and cleaning data `brfss_smart2010`*
 
-```{r }
+```{r echo=FALSE}
+brfss =
+  brfss_smart2010 %>% 
+    janitor::clean_names() %>% 
+    rename(
+      state = locationabbr,
+      descending_location = locationdesc,
+    )
+```
 
+#### *Formatting a new dataset to focus on the “Overall Health” topic*
+
+```{r echo=FALSE}
+brfss_new = 
+  brfss %>% 
+    filter(
+      topic == "Overall Health",
+      response %in% c("Excellent", "Very good", "Good", "Fair", "Poor")) %>%
+    mutate(response = ordered(as.factor(response),
+                              levels = c(
+                                "Poor", 
+                                "Fair", 
+                                "Good", 
+                                "Very good", 
+                                "Excellent")))
 ```
 
 

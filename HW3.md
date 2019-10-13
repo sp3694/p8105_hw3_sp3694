@@ -5,8 +5,7 @@ Stephen Powers
 
 ## Problem 1
 
-\#\#\#*Cleaning Instacart
-Dataset*
+#### *Cleaning Instacart Dataset*
 
 | order\_id | product\_id | add\_to\_cart\_order | reordered | user\_id | eval\_set | order\_number | order\_dow | order\_hour\_of\_day | days\_since\_prior\_order | product\_name                                 | aisle\_id | department\_id | aisle                | department   |
 | --------: | ----------: | -------------------: | --------: | -------: | :-------- | ------------: | ---------: | -------------------: | ------------------------: | :-------------------------------------------- | --------: | -------------: | :------------------- | :----------- |
@@ -55,6 +54,8 @@ aisles.
 
 ![](HW3_files/figure-gfm/plot1-1.png)<!-- -->
 
+#### *Creating a table showing the three most popular items in each of the aisles “baking ingredients”, “dog food care”, and “packaged vegetables fruits”.*
+
 | rank | product\_name\_baking ingredients | product\_name\_dog food care                    | product\_name\_packaged vegetables fruits | number\_orders\_baking ingredients | number\_orders\_dog food care | number\_orders\_packaged vegetables fruits |
 | ---: | :-------------------------------- | :---------------------------------------------- | :---------------------------------------- | ---------------------------------: | ----------------------------: | -----------------------------------------: |
 |    1 | Light Brown Sugar                 | Organix Grain Free Chicken & Vegetable Dog Food | Organic Baby Spinach                      |                                157 |                            14 |                                       3324 |
@@ -64,6 +65,8 @@ aisles.
 Table
 3
 
+#### *Creating a table showing the mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered on each day of the week*
+
 | product\_name    |   Sunday |   Monday |  Tuesday | Wednesday | Thursday |   Friday | Saturday |
 | :--------------- | -------: | -------: | -------: | --------: | -------: | -------: | -------: |
 | Coffee Ice Cream | 13.77419 | 14.31579 | 15.38095 |  15.31818 | 15.21739 | 12.26316 | 13.83333 |
@@ -72,5 +75,34 @@ Table
 Table 4
 
 ## Problem 2
+
+#### *Renaming and cleaning data `brfss_smart2010`*
+
+``` r
+brfss =
+  brfss_smart2010 %>% 
+    janitor::clean_names() %>% 
+    rename(
+      state = locationabbr,
+      descending_location = locationdesc,
+    )
+```
+
+#### *Formatting a new dataset to focus on the “Overall Health” topic*
+
+``` r
+brfss_new = 
+  brfss %>% 
+    filter(
+      topic == "Overall Health",
+      response %in% c("Excellent", "Very good", "Good", "Fair", "Poor")) %>%
+    mutate(response = ordered(as.factor(response),
+                              levels = c(
+                                "Poor", 
+                                "Fair", 
+                                "Good", 
+                                "Very good", 
+                                "Excellent")))
+```
 
 ## Problem 3
