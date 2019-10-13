@@ -44,6 +44,22 @@ instacart %>%
 
 * From the table created above, we see that the most ordered items are from the "fresh fruits" and "packaged vegetables fruits" aisles. 
 
+
+```{r plot1, echo=FALSE}
+instacart %>% 
+  group_by(aisle) %>% 
+  count() %>% 
+  filter(n > 10000) %>% 
+  ggplot(aes(x = reorder(aisle, n), y = n)) +
+  geom_bar(stat = "identity") +
+  theme_classic() +
+  ggtitle("Number of Items Ordered in Each Aisle") +
+  xlab("Aisle") +
+  ylab("Number of items ordered") +
+  theme(axis.text.x = element_text(angle=45, hjust=1))
+```
+
+
 ## Problem 2
 
 

@@ -48,6 +48,8 @@ dataset.
   - From the table created above, we see that the most ordered items are
     from the “fresh fruits” and “packaged vegetables fruits” aisles.
 
+![](HW3_files/figure-gfm/plot1-1.png)<!-- -->
+
 ## Problem 2
 
 ## Problem 3
