@@ -17,6 +17,8 @@ Dataset*
 |         1 |       43633 |                    5 |         1 |   112108 | train     |             4 |          4 |                   10 |                         9 | Lightly Smoked Sardines in Olive Oil          |        95 |             15 | canned meat seafood  | canned goods |
 |         1 |       13176 |                    6 |         0 |   112108 | train     |             4 |          4 |                   10 |                         9 | Bag of Organic Bananas                        |        24 |              4 | fresh fruits         | produce      |
 
+Table 1
+
 The `instacart` dataset contains 1384617 observations and 15 variables.
 The variables in the dataset includes the following: order\_id,
 product\_id, add\_to\_cart\_order, reordered, user\_id, eval\_set,
@@ -45,10 +47,21 @@ dataset.
 |       45007 | Organic Zucchini       | fresh vegetables           |  4589 |
 |       22935 | Organic Yellow Onion   | fresh vegetables           |  4290 |
 
+Table 2
+
   - From the table created above, we see that the most ordered items are
-    from the “fresh fruits” and “packaged vegetables fruits” aisles.
+    from the “fresh fruits” and “packaged vegetables fruits”
+aisles.
 
 ![](HW3_files/figure-gfm/plot1-1.png)<!-- -->
+
+| rank | product\_name\_baking ingredients | product\_name\_dog food care                    | product\_name\_packaged vegetables fruits | number\_orders\_baking ingredients | number\_orders\_dog food care | number\_orders\_packaged vegetables fruits |
+| ---: | :-------------------------------- | :---------------------------------------------- | :---------------------------------------- | ---------------------------------: | ----------------------------: | -----------------------------------------: |
+|    1 | Light Brown Sugar                 | Organix Grain Free Chicken & Vegetable Dog Food | Organic Baby Spinach                      |                                157 |                            14 |                                       3324 |
+|    2 | Pure Baking Soda                  | Organix Chicken & Brown Rice Recipe             | Organic Raspberries                       |                                140 |                            13 |                                       1920 |
+|    3 | Organic Vanilla Extract           | Original Dry Dog                                | Organic Blueberries                       |                                122 |                             9 |                                       1692 |
+
+Table 3
 
 ## Problem 2
 

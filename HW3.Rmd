@@ -26,7 +26,9 @@ data("brfss_smart2010")
 instacart %>% 
   janitor::clean_names() %>% 
   head() %>% 
-  knitr::kable()
+  knitr::kable(
+    caption = "Table 1"
+  )
 ```
 
 The `instacart` dataset contains `r nrow(instacart)` observations and `r ncol(instacart)` variables. The variables in the dataset includes the following: `r colnames(instacart)`
@@ -39,7 +41,9 @@ instacart %>%
   count(product_id, product_name, aisle) %>% 
   arrange(desc(n)) %>% 
   head(15) %>% 
-  knitr::kable()
+  knitr::kable(
+    caption = "Table 2"
+  )
 ```
 
 * From the table created above, we see that the most ordered items are from the "fresh fruits" and "packaged vegetables fruits" aisles. 
@@ -57,6 +61,26 @@ instacart %>%
   xlab("Aisle") +
   ylab("Number of items ordered") +
   theme(axis.text.x = element_text(angle=45, hjust=1))
+```
+
+
+```{r echo=FALSE}
+instacart %>% 
+  filter(aisle == c("baking ingredients","dog food care","packaged vegetables fruits")) %>%
+  group_by(aisle, product_name) %>% 
+  summarize(
+    number_orders = n()) %>% 
+  arrange(aisle, desc(number_orders)) %>% 
+  mutate(rank = rank(desc(number_orders))) %>% 
+  filter(rank<4) %>% 
+  pivot_wider(
+    id_cols = rank,
+    names_from = aisle,
+    values_from = c(product_name, number_orders)) %>% 
+  knitr::kable(
+    format = 'pandoc',
+    caption = "Table 3"
+  )
 ```
 
 
