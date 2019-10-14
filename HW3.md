@@ -150,3 +150,7 @@ brfss_new %>%
 ![](HW3_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## Problem 3
+
+#### *Load in Accel Data*
+
+#### *Cleaning Accel Data*

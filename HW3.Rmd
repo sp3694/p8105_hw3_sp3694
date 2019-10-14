@@ -225,15 +225,29 @@ brfss_new %>%
 ## Problem 3
 
 #### *Load in Accel Data*
-```{r}
+```{r include=FALSE}
 accel_data = read_csv("./Data/accel_data.csv")
 ```
 
 #### *Cleaning Accel Data*
 
-```{r}
+```{r echo=FALSE}
 accel = 
   accel_data %>% 
+  janitor::clean_names() %>% 
+  pivot_longer(
+    activity_1:activity_1440,
+    names_to = "minute",
+    names_prefix = "activity_",
+    values_to = "activity") %>% 
+  mutate(day_type = if_else(day %in% c("Saturday", "Sunday"),"weekend", "weekday"),
+    day_type = as.factor(day_type),
+    minute = as.numeric(minute),
+    activity = as.numeric(activity), 
+    minute = as.numeric(minute),
+    day = as.factor(day), 
+    week = as.factor(week),
+    day_id = as.numeric(day_id)) %>% 
+  view()
 ```
-
 
