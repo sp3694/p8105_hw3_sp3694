@@ -1,7 +1,7 @@
 HW3
 ================
 Stephen Powers
-10/12/2019
+10/14/2019
 
 ## Problem 1
 
@@ -64,7 +64,7 @@ aisles.
 |    2 | Pure Baking Soda                  | Organix Chicken & Brown Rice Recipe             | Organic Raspberries                       |                                140 |                            13 |                                       1920 |
 |    3 | Organic Vanilla Extract           | Original Dry Dog                                | Organic Blueberries                       |                                122 |                             9 |                                       1692 |
 
-**Table 3**: Three most popular items in each of the aisles baking
+**Table 3**: Three most popular items in each of the aisles: baking
 ingredients, dog food care, and packaged vegetables
 fruits
 
@@ -179,7 +179,7 @@ day, minute, activity, day\_type.
 | 5    | Tuesday   |      367824.00 |
 | 5    | Wednesday |      445366.00 |
 
-**Table 7**: Daily Activity
+**Table 7**: Daily Total Activity
 
 From the table above, total activity appears to be consistent by weekday
 and weekend from week 1 to week 3. However, activity over the weekend

@@ -1,7 +1,7 @@
 ---
 title: "HW3"
 author: "Stephen Powers"
-date: "10/12/2019"
+date: "10/14/2019"
 output: github_document
 ---
 
