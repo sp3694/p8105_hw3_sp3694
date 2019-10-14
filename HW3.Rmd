@@ -199,7 +199,7 @@ brfss_new %>%
 
 #### *Creating two-panel plot*
 
-```{r}
+```{r echo=FALSE}
 brfss_new %>% 
     mutate(descending_location = str_to_title(descending_location)) %>% 
     filter(
@@ -264,7 +264,11 @@ accel %>%
   caption = "**Table 7**: Daily Activity")
 ```
 
-```{r}
+From the table above, total activity appears to be consistent by weekday and weekend from week 1 to week 3. However, activity over the weekend days from week 4 to week 5 appears to low compared to previous weeks. Overall, weekends may trend toward lower total activity compared to weekdays. 
+
+#### *Creating Plot for 24-Hour Activity Time*
+
+```{r echo=FALSE}
 accel %>% 
   mutate(hour = minute %/% 60) %>%
   group_by(day, hour) %>%

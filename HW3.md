@@ -125,28 +125,6 @@ ordered
 
 #### *Creating two-panel plot*
 
-``` r
-brfss_new %>% 
-    mutate(descending_location = str_to_title(descending_location)) %>% 
-    filter(
-        year %in% c(2006, 2010),
-        state == "NY") %>% 
-        group_by(year, descending_location) %>%
-    ggplot(aes(x = response, y = data_value, fill = descending_location)) + 
-    geom_col(position = "dodge") + 
-    facet_grid(. ~ year) +
-    viridis::scale_fill_viridis(
-        option = "magma",
-        name = "County",
-        discrete = TRUE) +
-    labs(
-        title = "Distribution of Response Values by Year and NY County",
-        x = "Response",
-        y = "Mean Response Value") +
-    theme_classic() +
-    theme(axis.text.x = element_text(angle=45, hjust=1))
-```
-
 ![](HW3_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## Problem 3
@@ -201,25 +179,12 @@ day, minute, activity, day\_type.
 
 **Table 7**: Daily Activity
 
-``` r
-accel %>% 
-  mutate(hour = minute %/% 60) %>%
-  group_by(day, hour) %>%
-  summarise(
-    total_activity = sum(activity)) %>%
-  ggplot(aes(x = hour, y = total_activity, color = day)) + 
-    geom_line() + 
-  theme_bw() +
-  scale_x_continuous(breaks = c(0:24)) +
-  scale_y_continuous(breaks = c(50000, 100000, 150000, 200000, 250000)) +
-  viridis::scale_color_viridis(
-    name = "Day", 
-    discrete = TRUE, 
-    option = "plasma") + 
-  labs(
-    x = "Hour",
-    y = "Total Activity", 
-    title = "24-Hour Activity Time")
-```
+From the table above, total activity appears to be consistent by weekday
+and weekend from week 1 to week 3. However, activity over the weekend
+days from week 4 to week 5 appears to low compared to previous weeks.
+Overall, weekends may trend toward lower total activity compared to
+weekdays.
+
+#### *Creating Plot for 24-Hour Activity Time*
 
 ![](HW3_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
