@@ -154,3 +154,45 @@ brfss_new %>%
 #### *Load in Accel Data*
 
 #### *Cleaning Accel Data*
+
+#### *Creating Table for Total Activity*
+
+| Week | Day       | Total Activity |
+| :--- | :-------- | -------------: |
+| 1    | Friday    |      480542.62 |
+| 1    | Monday    |       78828.07 |
+| 1    | Saturday  |      376254.00 |
+| 1    | Sunday    |      631105.00 |
+| 1    | Thursday  |      355923.64 |
+| 1    | Tuesday   |      307094.24 |
+| 1    | Wednesday |      340115.01 |
+| 2    | Friday    |      568839.00 |
+| 2    | Monday    |      295431.00 |
+| 2    | Saturday  |      607175.00 |
+| 2    | Sunday    |      422018.00 |
+| 2    | Thursday  |      474048.00 |
+| 2    | Tuesday   |      423245.00 |
+| 2    | Wednesday |      440962.00 |
+| 3    | Friday    |      467420.00 |
+| 3    | Monday    |      685910.00 |
+| 3    | Saturday  |      382928.00 |
+| 3    | Sunday    |      467052.00 |
+| 3    | Thursday  |      371230.00 |
+| 3    | Tuesday   |      381507.00 |
+| 3    | Wednesday |      468869.00 |
+| 4    | Friday    |      154049.00 |
+| 4    | Monday    |      409450.00 |
+| 4    | Saturday  |        1440.00 |
+| 4    | Sunday    |      260617.00 |
+| 4    | Thursday  |      340291.00 |
+| 4    | Tuesday   |      319568.00 |
+| 4    | Wednesday |      434460.00 |
+| 5    | Friday    |      620860.00 |
+| 5    | Monday    |      389080.00 |
+| 5    | Saturday  |        1440.00 |
+| 5    | Sunday    |      138421.00 |
+| 5    | Thursday  |      549658.00 |
+| 5    | Tuesday   |      367824.00 |
+| 5    | Wednesday |      445366.00 |
+
+**Table 7**: Daily Activity
