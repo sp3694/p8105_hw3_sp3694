@@ -209,8 +209,9 @@ accel %>%
     total_activity = sum(activity)) %>%
   ggplot(aes(x = hour, y = total_activity, color = day)) + 
     geom_line() + 
-    theme(legend.position = "bottom") + 
-  theme_classic() + 
+  theme_bw() +
+  scale_x_continuous(breaks = c(0:24)) +
+  scale_y_continuous(breaks = c(50000, 100000, 150000, 200000, 250000)) +
   viridis::scale_color_viridis(
     name = "Day", 
     discrete = TRUE, 
@@ -218,7 +219,7 @@ accel %>%
   labs(
     x = "Hour",
     y = "Total Activity", 
-    title = "24-hour Activity Time")
+    title = "24-Hour Activity Time")
 ```
 
 ![](HW3_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
