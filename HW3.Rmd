@@ -224,9 +224,16 @@ brfss_new %>%
 
 ## Problem 3
 
+#### *Load in Accel Data*
+```{r}
+accel_data = read_csv("./Data/accel_data.csv")
+```
+
+#### *Cleaning Accel Data*
 
 ```{r}
-
+accel = 
+  accel_data %>% 
 ```
 
 
