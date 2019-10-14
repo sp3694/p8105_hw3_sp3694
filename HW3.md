@@ -52,6 +52,8 @@ dataset.
     from the “fresh fruits” and “packaged vegetables fruits”
 aisles.
 
+#### *Creating a plot that shows the number of items ordered in each aisle.*
+
 ![](HW3_files/figure-gfm/plot1-1.png)<!-- -->
 
 #### *Creating a table showing the three most popular items in each of the aisles “baking ingredients”, “dog food care”, and “packaged vegetables fruits”.*
@@ -94,8 +96,8 @@ ordered
 | NJ    |                 8 |
 | PA    |                10 |
 
-**Table 5**: States that were observed at 7 or more locations (year
-=2002)
+**Table 5**: States that were observed at 7 or more locations (year =
+2002)
 
 #### *Creating a table for states that were observed at 7 or more location in 2010*
 
@@ -121,11 +123,11 @@ ordered
 
 #### *Creating Spaghetti Plot*
 
-![](HW3_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](HW3_files/figure-gfm/plot2-1.png)<!-- -->
 
 #### *Creating two-panel plot*
 
-![](HW3_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](HW3_files/figure-gfm/plot3-1.png)<!-- -->
 
 ## Problem 3
 
@@ -187,4 +189,11 @@ weekdays.
 
 #### *Creating Plot for 24-Hour Activity Time*
 
-![](HW3_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](HW3_files/figure-gfm/plot4-1.png)<!-- -->
+
+From looking at plot4 (“24-Hour Activity Time”), we can see that this
+individual is typically active from around hour 6 to around hour 21.
+This makes sense because the individual is likely sleeping in hours (0-5
+and 22-24). Additionally, there appears to be peak activity times on
+Sunday during the middle of the day (hours 9-12) and on Friday later at
+night (hours 20-21)

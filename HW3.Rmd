@@ -49,6 +49,8 @@ instacart %>%
 * From the table created above, we see that the most ordered items are from the "fresh fruits" and "packaged vegetables fruits" aisles. 
 
 
+#### *Creating a plot that shows the number of items ordered in each aisle.*
+
 ```{r plot1, echo=FALSE}
 instacart %>% 
   group_by(aisle) %>% 
@@ -60,7 +62,7 @@ instacart %>%
   ggtitle("Number of Items Ordered in Each Aisle") +
   xlab("Aisle") +
   ylab("Number of items ordered") +
-  theme(axis.text.x = element_text(angle=45, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 #### *Creating a table showing the three most popular items in each of the aisles “baking ingredients”, “dog food care”, and “packaged vegetables fruits”.*
@@ -73,13 +75,13 @@ instacart %>%
     number_orders = n()) %>% 
   arrange(aisle, desc(number_orders)) %>% 
   mutate(rank = rank(desc(number_orders))) %>% 
-  filter(rank<4) %>% 
+  filter(rank < 4) %>% 
   pivot_wider(
     id_cols = rank,
     names_from = aisle,
     values_from = c(product_name, number_orders)) %>% 
   knitr::kable(
-    caption = "**Table 3**: Three most popular items in each of the aisles baking ingredients, dog food care, and packaged vegetables fruits"
+    caption = "**Table 3**: Three most popular items in each of the aisles: baking ingredients, dog food care, and packaged vegetables fruits"
   )
 ```
 
@@ -91,7 +93,7 @@ instacart %>%
   filter(product_name %in% c("Pink Lady Apples", "Coffee Ice Cream")) %>% 
   mutate(order_dow = as.factor(order_dow)) %>% 
   mutate(
-        day = recode(order_dow,
+      day = recode(order_dow,
             "0" = "Sunday",
             "1" = "Monday",
             "2" = "Tuesday",
@@ -99,7 +101,7 @@ instacart %>%
             "4" = "Thursday",
             "5" = "Friday",
             "6" = "Saturday")
-        ) %>% 
+      ) %>% 
   group_by(product_name, day) %>% 
   arrange(product_name, day) %>% 
   summarize(
@@ -137,12 +139,8 @@ brfss_new =
       topic == "Overall Health",
       response %in% c("Excellent", "Very good", "Good", "Fair", "Poor")) %>%
     mutate(response = ordered(as.factor(response),
-                              levels = c(
-                                "Poor", 
-                                "Fair", 
-                                "Good", 
-                                "Very good", 
-                                "Excellent")))
+      levels = c("Poor", "Fair", "Good", "Very good", "Excellent"))
+    )
 ```
 
 
@@ -158,7 +156,7 @@ brfss_new %>%
     number_locations = n()) %>% 
     filter(number_locations >= 7) %>% 
   knitr::kable(
-  caption = "**Table 5**: States that were observed at 7 or more locations (year =2002)"
+  caption = "**Table 5**: States that were observed at 7 or more locations (year = 2002)"
   )
 ```
 
@@ -180,7 +178,7 @@ brfss_new %>%
 
 #### *Creating Spaghetti Plot*
 
-```{r warning=FALSE, echo=FALSE}
+```{r plot2, warning=FALSE, echo=FALSE}
 brfss_new %>% 
   filter(response == "Excellent") %>% 
   select(year, state, descending_location, data_value) %>%
@@ -199,7 +197,7 @@ brfss_new %>%
 
 #### *Creating two-panel plot*
 
-```{r echo=FALSE}
+```{r plot3, echo=FALSE}
 brfss_new %>% 
     mutate(descending_location = str_to_title(descending_location)) %>% 
     filter(
@@ -218,7 +216,7 @@ brfss_new %>%
         x = "Response",
         y = "Mean Response Value") +
     theme_classic() +
-    theme(axis.text.x = element_text(angle=45, hjust=1))
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 
@@ -260,15 +258,16 @@ accel %>%
   group_by(week, day) %>% 
   summarise(
     total_activity = sum(activity)) %>% 
-  knitr::kable(col.names = c("Week", "Day", "Total Activity"),
-  caption = "**Table 7**: Daily Activity")
+  knitr::kable(
+    col.names = c("Week", "Day", "Total Activity"),
+    caption = "**Table 7**: Daily Total Activity")
 ```
 
 From the table above, total activity appears to be consistent by weekday and weekend from week 1 to week 3. However, activity over the weekend days from week 4 to week 5 appears to low compared to previous weeks. Overall, weekends may trend toward lower total activity compared to weekdays. 
 
 #### *Creating Plot for 24-Hour Activity Time*
 
-```{r echo=FALSE}
+```{r plot4, echo=FALSE}
 accel %>% 
   mutate(hour = minute %/% 60) %>%
   group_by(day, hour) %>%
@@ -286,6 +285,8 @@ accel %>%
   labs(
     x = "Hour",
     y = "Total Activity", 
-    title = "24-Hour Activity Time")
+    title = "24-Hour Activity Time") %>%  view
 ```
+
+From looking at plot4 ("24-Hour Activity Time"), we can see that this individual is typically active from around hour 6 to around hour 21. This makes sense because the individual is likely sleeping in hours (0-5 and 22-24). Additionally, there appears to be peak activity times on Sunday during the middle of the day (hours 9-12) and on Friday later at night (hours 20-21)
 
