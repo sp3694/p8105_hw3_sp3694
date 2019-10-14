@@ -200,3 +200,25 @@ day, minute, activity, day\_type.
 | 5    | Wednesday |      445366.00 |
 
 **Table 7**: Daily Activity
+
+``` r
+accel %>% 
+  mutate(hour = minute %/% 60) %>%
+  group_by(day, hour) %>%
+  summarise(
+    total_activity = sum(activity)) %>%
+  ggplot(aes(x = hour, y = total_activity, color = day)) + 
+    geom_line() + 
+    theme(legend.position = "bottom") + 
+  theme_classic() + 
+  viridis::scale_color_viridis(
+    name = "Day", 
+    discrete = TRUE, 
+    option = "plasma") + 
+  labs(
+    x = "Hour",
+    y = "Total Activity", 
+    title = "24-hour Activity Time")
+```
+
+![](HW3_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
