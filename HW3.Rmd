@@ -251,6 +251,8 @@ accel =
   view()
 ```
 
+This dataset, Accel, contains `r nrow(accel)` observations. There are `r ncol(accel)` variables in this dataset. These variables include the following: `r colnames(accel)`.
+
 #### *Creating Table for Total Activity*
 
 ```{r echo=FALSE}
@@ -261,4 +263,3 @@ accel %>%
   knitr::kable(col.names = c("Week", "Day", "Total Activity"),
   caption = "**Table 7**: Daily Activity")
 ```
-

@@ -155,6 +155,10 @@ brfss_new %>%
 
 #### *Cleaning Accel Data*
 
+This dataset, Accel, contains 50400 observations. There are 6 variables
+in this dataset. These variables include the following: week, day\_id,
+day, minute, activity, day\_type.
+
 #### *Creating Table for Total Activity*
 
 | Week | Day       | Total Activity |
